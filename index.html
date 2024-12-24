@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiger Facts</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .fact-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #fact {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #next-fact {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #next-fact:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Tiger Facts</h1>
+        <div class="fact-box">
+            <p id="fact"></p>
+        </div>
+        <button id="next-fact">Next Fact</button>
+    </div>
+    <script>
+        const facts = [
+          "Tigers are the largest cat species in the world.",
+          "They are found in Asia, ranging from Russia to Indonesia.",
+          "Tigers are solitary animals, except for mothers and cubs.",
+          "They are apex predators, meaning they have no natural predators.",
+          "Tigers have powerful jaws and sharp claws that help them hunt.",
+          "They are excellent swimmers and can hold their breath for long periods.",
+          "Tigers have distinctive stripes that act as camouflage in their natural habitat.",
+          "They are carnivores and primarily hunt deer, wild pigs, and other large mammals.",
+          "Tigers are endangered due to habitat loss, poaching, and human-wildlife conflict.",
+          "Conservation efforts are underway to protect tigers and their habitats."
+        ];
+
+        const factElement = document.getElementById('fact');
+        const nextFactButton = document.getElementById('next-fact');
+
+        function displayRandomFact() {
+          const randomIndex = Math.floor(Math.random() * facts.length);
+          factElement.textContent = facts[randomIndex];
+        }
+
+        nextFactButton.addEventListener('click', displayRandomFact);
+
+        // Display a random fact initially
+        displayRandomFact();
+    </script>
+</body>
+</html>
